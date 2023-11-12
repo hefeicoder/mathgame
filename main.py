@@ -23,7 +23,7 @@ def update_image(correct):
         image = Image.open('resource/duck_thumbup.png')
     else:
         image = Image.open('resource/duck_thumbdown.png')
-    image = image.resize((600, 600), Image.ANTIALIAS)  # Resize image
+    image = image.resize((600, 600), Image.Resampling.LANCZOS)  # Resize image
     photo = ImageTk.PhotoImage(image)
     image_label.config(image=photo)
     image_label.image = photo  # Keep a reference
